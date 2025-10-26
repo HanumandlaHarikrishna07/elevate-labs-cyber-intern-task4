@@ -1,0 +1,11 @@
+Windows Firewall Configuration Log for Task 4
+
+1. Command used to create the inbound block rule for Telnet (Port 23):
+New-NetFirewallRule -DisplayName "Block Telnet (Port 23) - Intern Task 4" -Direction Inbound -Protocol TCP -LocalPort 23 -Action Block
+
+2. Command used to test and validate that the port was blocked:
+The output confirmed the block with "TcpTestSucceeded : False"
+Test-NetConnection -ComputerName 10.19.129.158 -Port 23
+
+3. Command used to permanently remove the test rule and clean up the system:
+Remove-NetFirewallRule -DisplayName "Block Telnet (Port 23) - Intern Task 4"
